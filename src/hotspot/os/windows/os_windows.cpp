@@ -1613,7 +1613,6 @@ void * os::dll_load(const char *name, char *ebuf, int ebuflen) {
   } arch_t;
 
   static const arch_t arch_array[] = {
-    {IMAGE_FILE_MACHINE_I386,      (char*)"IA 32"},
     {IMAGE_FILE_MACHINE_AMD64,     (char*)"AMD 64"},
     {IMAGE_FILE_MACHINE_ARM64,     (char*)"ARM 64"}
   };
