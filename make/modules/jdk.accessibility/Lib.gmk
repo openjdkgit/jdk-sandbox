@@ -34,7 +34,7 @@ ifeq ($(call isTargetOs, windows), true)
   ## Build libjavaaccessbridge
   ##############################################################################
 
-  $(call SetupJdkLibrary, BUILD_LIBJAVAACCESSBRIDGE, \
+  $(eval $(call SetupJdkLibrary, BUILD_LIBJAVAACCESSBRIDGE, \
       NAME := javaaccessbridge, \
       EXTRA_SRC := common, \
       OPTIMIZATION := LOW, \
@@ -50,7 +50,7 @@ ifeq ($(call isTargetOs, windows), true)
           user32.lib uuid.lib winspool.lib, \
       VERSIONINFO_RESOURCE := \
           $(ACCESSIBILITY_SRCDIR)/common/AccessBridgeStatusWindow.rc, \
-  )
+  ))
 
   TARGETS += $(BUILD_LIBJAVAACCESSBRIDGE)
 
@@ -58,7 +58,7 @@ ifeq ($(call isTargetOs, windows), true)
   ## Build libwindowsaccessbridge
   ##############################################################################
 
-  $(call SetupJdkLibrary, BUILD_LIBWINDOWSACCESSBRIDGE, \
+  $(eval $(call SetupJdkLibrary, BUILD_LIBWINDOWSACCESSBRIDGE, \
       NAME := windowsaccessbridge, \
       EXTRA_SRC := common, \
       OPTIMIZATION := LOW, \
@@ -73,7 +73,7 @@ ifeq ($(call isTargetOs, windows), true)
           user32.lib uuid.lib winspool.lib, \
       VERSIONINFO_RESOURCE := \
           $(ACCESSIBILITY_SRCDIR)/common/AccessBridgeStatusWindow.rc, \
-  )
+  ))
 
   TARGETS += $(BUILD_LIBWINDOWSACCESSBRIDGE)
 endif
