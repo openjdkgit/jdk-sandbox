@@ -326,7 +326,7 @@ address NativeLookup::lookup_entry(const methodHandle& method, TRAPS) {
                 + method->size_of_parameters(); // actual parameters
 
   // 1) Try JNI short style
-  entry = lookup_style(method, pure_name, "",        args_size, true,  CHECK_NULL);
+  entry = lookup_style(method, pure_name, "",        args_size, CHECK_NULL);
   if (entry != nullptr) return entry;
 
   // Compute long name
@@ -338,7 +338,7 @@ address NativeLookup::lookup_entry(const methodHandle& method, TRAPS) {
   }
 
   // 2) Try JNI long style
-  entry = lookup_style(method, pure_name, long_name, args_size,  CHECK_NULL);
+  entry = lookup_style(method, pure_name, long_name, args_size, CHECK_NULL);
   if (entry != nullptr) return entry;
 
   // 3) Try JNI short style without os prefix/suffix
